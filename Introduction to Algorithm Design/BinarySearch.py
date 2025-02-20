@@ -111,7 +111,7 @@ def binary_search(lst, num):
     step = 0
     while min <= max:
         step += 1
-        middle = (min + max) // 2
+        middle = (min + max) // 2 # 取中間值整數
         if num > lst[middle]:
             min = middle + 1
         elif num < lst[middle]:
