@@ -29,3 +29,6 @@ def linear(n: int):
     hmap = dict[int, str]()
     for i in range(n):
         hmap[i] = str(i)
+
+
+def linear_recur(n: int):
