@@ -32,3 +32,13 @@ def linear(n: int):
 
 
 def linear_recur(n: int):
+    """ 線性階（遞迴實現）"""
+    print(" 遞迴 n =", n)
+    if n == 1:
+        return
+    linear_recur(n - 1)
+
+
+def quadratic(n: int):
+    """ 平方階 """
+    num_matrix = [[0] * n for _ in range(n)]
