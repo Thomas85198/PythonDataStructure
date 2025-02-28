@@ -33,3 +33,20 @@ def traverse(nums: list[int]):
     for i, num in enumerate(nums):
         count += nums[i]
         count += num
+
+
+def find(nums: list[int], target: int) -> int:
+    """ 在陣列中查詢指定元素 """
+    for i in range(len(nums)):
+        if nums[i] == target:
+            return i
+    return - 1
+
+
+def extend(nums: list[int], enlarge: int) -> list[int]:
+    """ 擴展陣列長度 """
+    res = [0] * (len(nums) + enlarge)
+    for i in range(len(nums)):
+        res[i] = nums[i]
+
+    return res
