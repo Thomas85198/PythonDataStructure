@@ -105,7 +105,9 @@ numbers = [
 def linear_search(lst, n):
     for i in range(len(lst)):
         if lst[i] == n:
+            print(f"我已經找到數字 {n}")
             return i
+    print(f"找不到數字 {n}")
     return -1
 
 

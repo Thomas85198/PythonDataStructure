@@ -1,24 +1,34 @@
-str_1 = "abbc"
-str_2 = "aabc"
+str1 = "abbc"
+str2 = "babc"
 
 
-def same_frequency(str_1, str_2):
-    counter_i = {}
-    counter_j = {}
-
-    if (len(str_1) != len(str_2)):
+def same_frequency(str1, str2):
+    if len(str1) != len(str2):
         return False
+    counter1 = {}
+    counter2 = {}
 
-    for i in str_1:
-        print(i)
-        counter_i[i] = counter_i.get(i, 0) + 1
+    for i in range(len(str1)):
+        if str1[i] in counter1:
+            counter1[str1[i]] += 1
+        else:
+            counter1[str1[i]] = 1
 
-    for j in str_2:
-        print(j)
-        counter_j[j] = counter_j.get(j, 0) + 1
+    for j in range(len(str2)):
+        if str2[j] in counter2:
+            counter2[str2[j]] += 1
+        else:
+            counter2[str2[j]] = 1
 
-    print(counter_i, counter_j)
-    return counter_i == counter_j
+    print(counter1, counter2)
+
+    for key, value in counter1.items():
+        if key not in counter2:
+            return False
+        elif counter1[key] != counter2[key]:
+            return False
+        else:
+            return True
 
 
-print(same_frequency(str_1, str_2))
+print(same_frequency(str1, str2))

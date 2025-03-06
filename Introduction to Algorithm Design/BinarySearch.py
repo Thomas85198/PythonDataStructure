@@ -101,25 +101,22 @@ numbers = [
     298,
 ]
 
-# 只能用在 Sorted Array
-# logn
 
-
-def binary_search(lst, num):
+def binary_search(arr, n):
     min = 0
-    max = len(lst) - 1
-    step = 0
-    while min <= max:
-        step += 1
-        middle = (min + max) // 2 # 取中間值整數
-        if num > lst[middle]:
+    max = len(arr) - 1
+
+    while (min <= max):
+        middle = max + min // 2
+        if n > arr[middle]:
             min = middle + 1
-        elif num < lst[middle]:
+        elif n < arr[middle]:
             max = middle - 1
-        else:
-            print(f"總共要: {step}步")
-            return middle
-    return -1
+        elif n == arr[middle]:
+            print(f"找到這個數字: {n} 在第 {middle} index")
+            return arr[middle]
+    print(f"找不到這個數字")
+    return - 1
 
 
-print(binary_search(numbers, 298))
+print(binary_search(numbers, 100))

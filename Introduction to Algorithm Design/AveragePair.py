@@ -1,14 +1,15 @@
 nums = [-11, 0, 1, 2, 3, 9, 14, 17, 21]
-avg = 1.5
+average_nums = 1.5
 
 
-def average_pair(lst, avg):
+def average_pair(arr, avg_nums):
     result = []
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            if ((lst[i] + lst[j]) / 2) == avg:  # 正確計算平均值 == avg)
-                result.append([nums[i], nums[j]])
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            print(f"{arr[i]}, vs {arr[j]} 平均是: {arr[i] + arr[j] / 2}")
+            if (arr[i] + arr[j]) / 2 == avg_nums:
+                result.append([arr[i], arr[j]])
     print(result)
 
 
-average_pair(nums, avg)
+average_pair(nums, average_nums)
