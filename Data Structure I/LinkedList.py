@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, val: int):
         self.val: int = val
-        self.next: Node | None = None
+        self.next: None
 
 
 class LinkedList:
@@ -9,5 +9,8 @@ class LinkedList:
         self.head: None
         self.length = 0
 
-    def push(value):
+    def push(self, value):
         new_node = Node(value)
+        if self.head == None:
+            self.head = new_node
+        else:
