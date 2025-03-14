@@ -88,6 +88,32 @@ class LinkedList:
         return
 
     # remove_at()
+    def remove_at(self, index):
+        if index > self.length or index < 0:
+            return None
+        elif index == 0:
+            result = self.shift()
+            return result
+        elif index == self.length:
+            result = self.pop()
+            return result
+
+        current_node = self.head
+        for i in range(1, index):
+            current_node = current_node.next
+        temp = current_node.next
+        current_node.next = current_node.next.next
+        self.length -= 1
+        return temp
+
+    # get
+    def get(self, index):
+        if index >= self.length or index < 0:
+            return None
+        self.current_node = self.head
+        for i in range(index):
+            self.current_node = self.current_node.next
+        return self.current_node.val
 
     def print_all(self):
         if self.length == 0:
@@ -104,9 +130,5 @@ my_linked_list.push("Mike")
 my_linked_list.push("John")
 my_linked_list.push("Smith")
 my_linked_list.push("Anna")
-# popped_value = my_linked_list.pop()
-# print(popped_value.val)
-my_linked_list.insert_at(2, "Miley")
-# my_linked_list.shift()
-my_linked_list.print_all()
-print(my_linked_list.length)
+
+print(my_linked_list.get(2))
